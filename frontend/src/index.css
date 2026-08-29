@@ -1,0 +1,249 @@
+:root {
+  --color-bg: #f6f7f9;
+  --color-surface: #ffffff;
+  --color-border: #d9dce1;
+  --color-text: #1f2430;
+  --color-muted: #667085;
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-danger: #dc2626;
+  --color-success: #16a34a;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  background: var(--color-primary);
+  color: white;
+  font-size: 0.9rem;
+}
+
+button:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.btn-danger {
+  background: var(--color-danger);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.field {
+  margin-bottom: 0.9rem;
+}
+
+.field-error {
+  color: var(--color-danger);
+  font-size: 0.85rem;
+}
+
+/* Auth pages */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.auth-form {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  width: 100%;
+  max-width: 380px;
+}
+
+.auth-switch {
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Error banner */
+.error-banner {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error-banner__dismiss {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1.1rem;
+  padding: 0 0.25rem;
+}
+
+/* Dashboard */
+.dashboard {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.dashboard__header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.dashboard__user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.membership-form {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.card--completed {
+  border-color: var(--color-success);
+}
+
+.card__title {
+  margin: 0 0 0.25rem;
+}
+
+.card__description {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.card__due-date,
+.card__status {
+  font-size: 0.85rem;
+  margin: 0.25rem 0;
+}
+
+.card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.75rem;
+}
+
+.card__toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+
+.card__toggle input {
+  width: auto;
+}
+
+.card__edit-form label {
+  margin-top: 0.5rem;
+}
+
+.empty-state {
+  color: var(--color-muted);
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* Loading skeletons */
+.skeleton {
+  background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 37%, #e5e7eb 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton--title {
+  height: 1.1rem;
+  width: 60%;
+}
+
+.skeleton--line {
+  height: 0.85rem;
+  width: 100%;
+}
+
+.skeleton--short {
+  width: 40%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
